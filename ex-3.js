@@ -4,9 +4,9 @@ let getJohnProfile = () => {
     setTimeout(
       () =>
         resolve({
-          name: "John",
+          name: 'John',
           age: 20,
-          hobbies: ["Coding", "Football"],
+          hobbies: ['Coding', 'Football']
         }),
       1000
     );
@@ -19,13 +19,13 @@ let getJohnOrders = () => {
       () =>
         resolve([
           {
-            orderId: "001",
-            items: ["apple", "banana"],
+            orderId: '001',
+            items: ['apple', 'banana']
           },
           {
-            orderId: "002",
-            items: ["orange", "itim"],
-          },
+            orderId: '002',
+            items: ['orange', 'itim']
+          }
         ]),
       1500
     );
@@ -33,3 +33,22 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+
+// const handleResponse = (response) => {
+//   return response.json();
+// };
+
+// const displayProfile = (data) => {
+//   console.log(data);
+// };
+
+// const displayOrders = (data) => {
+//   console.log(data);
+// };
+
+const onSuccess = (data) => {
+  console.log(data);
+};
+
+// getJohnProfile().then(displayProfile).then(getJohnOrders).then(displayOrders);
+getJohnProfile().then(onSuccess).then(getJohnOrders).then(onSuccess);

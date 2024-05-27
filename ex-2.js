@@ -5,7 +5,7 @@ let getJohnProfile = () => {
       () =>
         reject({
           errorCode: 500,
-          message: "👿 Failed to request data from server",
+          message: '👿 Failed to request data from server'
         }),
       2000
     );
@@ -13,3 +13,9 @@ let getJohnProfile = () => {
 };
 
 // Start coding here
+
+const onSuccess = (data) => console.log(data);
+
+const onFailure = (error) => console.log(error);
+
+getJohnProfile().then(onSuccess).catch(onFailure);

@@ -4,12 +4,26 @@ let getJohnProfile = () => {
     setTimeout(
       () =>
         resolve({
-          name: "John",
+          name: 'John',
           age: 20,
-          hobbies: ["Coding", "Football"],
+          hobbies: ['Coding', 'Football']
         }),
       1000
     );
   });
 };
 // Start coding here
+
+const asyncFunction = async () => {
+  try {
+    let johnProfile = await getJohnProfile();
+    console.log(johnProfile);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+asyncFunction();
+
+// let johnProfile = await getJohnProfile();
+// console.log(johnProfile);

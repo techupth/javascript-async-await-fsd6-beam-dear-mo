@@ -4,9 +4,9 @@ let getJohnProfile = () => {
     setTimeout(
       () =>
         resolve({
-          name: "John",
+          name: 'John',
           age: 20,
-          hobbies: ["Coding", "Football"],
+          hobbies: ['Coding', 'Football']
         }),
       1000
     );
@@ -19,13 +19,13 @@ let getJohnOrders = () => {
       () =>
         resolve([
           {
-            orderId: "001",
-            items: ["apple", "banana"],
+            orderId: '001',
+            items: ['apple', 'banana']
           },
           {
-            orderId: "002",
-            items: ["orange", "itim"],
-          },
+            orderId: '002',
+            items: ['orange', 'itim']
+          }
         ]),
       1500
     );
@@ -33,3 +33,16 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+
+const asyncFunction = async () => {
+  try {
+    let johnProfile = await getJohnProfile();
+    console.log(johnProfile);
+    let johnOrders = await getJohnOrders();
+    console.log(johnOrders);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+asyncFunction();
