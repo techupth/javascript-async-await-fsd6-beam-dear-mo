@@ -33,3 +33,14 @@ let getJohnOrders = () => {
 };
 
 // Start coding here
+async function ex6Function() {
+  try {
+    const JohnProfile = await getJohnProfile();
+    console.log(JohnProfile);
+    const JohnOrder = await getJohnOrders();
+    console.log(JohnOrder);
+  } catch {
+    console.log(error);
+  }
+}
+ex6Function();
