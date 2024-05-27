@@ -13,5 +13,14 @@ let getJohnProfile = () => {
   });
 };
 // Start coding here
-const result = await (getJohnProfile())
-console.log (result)
+async function asyncFunction() {
+  try {
+    const result = await getJohnProfile();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+asyncFunction();
+// let result = await getJohnProfile();
+// console.log(result);
